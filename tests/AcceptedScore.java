@@ -20,5 +20,9 @@ public class AcceptedScore {
         assertThat(new Score("8-------------------").total(), is(8));
     }
 
+    @Test
+    public void should_return_seven_when_only_seven_knocks_are_thrown() throws Exception {
+        assertThat(new Score("61------------------").total(), is(7));
+    }
 
 }

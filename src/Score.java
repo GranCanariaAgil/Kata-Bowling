@@ -7,12 +7,13 @@ public class Score {
     }
 
     public int total() {
+        int sum = 0;
         for (int i = 0; i < line.length(); i++) {
             char number = line.charAt(i);
             if (number != '-') {
-                return Integer.parseInt(String.valueOf(number));
+                sum += Integer.parseInt(String.valueOf(number));
             }
         }
-        return 0;
+        return sum;
     }
 }
