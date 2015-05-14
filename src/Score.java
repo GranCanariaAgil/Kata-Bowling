@@ -7,6 +7,12 @@ public class Score {
     }
 
     public int total() {
-        return !line.equals("--------------------") ? 5 : 0;
+        for (int i = 0; i < line.length(); i++) {
+            char number = line.charAt(i);
+            if (number != '-') {
+                return Integer.parseInt(String.valueOf(number));
+            }
+        }
+        return 0;
     }
 }

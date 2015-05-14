@@ -14,4 +14,11 @@ public class AcceptedScore {
     public void should_return_five_when_only_five_knocks_are_thrown() throws Exception {
         assertThat(new Score("-5------------------").total(), is(5));
     }
+
+    @Test
+    public void should_return_eight_when_only_eight_knocks_are_thrown() throws Exception {
+        assertThat(new Score("8-------------------").total(), is(8));
+    }
+
+
 }
