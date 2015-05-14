@@ -9,6 +9,7 @@ public class Frame {
     }
 
     private int parseToInt(char number) {
+        if (number == '/') return 10 - firstRoll;
         if (number == '-') return 0;
         return number - 48;
     }
