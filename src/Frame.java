@@ -1,28 +1,40 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Frame {
 
-    private final int firstRoll;
-    private final int secondRoll;
+    private final List<Integer> rolls;
 
     public Frame(char... rolls) {
-        firstRoll = parseToInt(rolls[0]);
-        secondRoll = parseToInt(rolls[1]);
+        this.rolls = new ArrayList<>();
+        for (char roll : rolls) this.rolls.add(parseToInt(roll));
     }
 
     private int parseToInt(char number) {
-        if (number == '/') return 10 - firstRoll;
-        if (number == '-') return 0;
+        if (isSpare(number)) return 10 - rolls.get(0);
+        if (isStrike(number)) return 10;
+        if (isZero(number)) return 0;
         return number - 48;
     }
 
+    private boolean isZero(char number) {
+        return number == '-';
+    }
+
+    private boolean isStrike(char number) {
+        return number == 'X';
+    }
+
+    private boolean isSpare(char number) {
+        return number == '/';
+    }
+
     public int knocks() {
-        return firstRoll + secondRoll;
+        return rolls.stream().reduce(Integer::sum).get();
     }
 
-    public int firstRoll() {
-        return firstRoll;
+    public int getRoll(int position) {
+        return rolls.get(position);
     }
 
-    public int secondRoll() {
-        return secondRoll;
-    }
 }
