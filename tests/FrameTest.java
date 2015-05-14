@@ -1,6 +1,5 @@
 import org.junit.Test;
 
-import static java.lang.invoke.MethodHandles.throwException;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 

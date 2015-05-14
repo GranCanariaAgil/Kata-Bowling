@@ -6,6 +6,10 @@ public class Score {
         this.line = line;
     }
 
+    public Score(Line line) {
+
+    }
+
     public int total() {
         int sum = 0;
         for (int i = 0; i < line.length(); i++) {

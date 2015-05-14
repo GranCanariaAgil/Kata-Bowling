@@ -30,4 +30,9 @@ public class AcceptedScore {
         assertThat(new Score("6/4-----------------").total(), is(18));
     }
 
+    @Test
+    public void should_calculate_a_simple_frame_score(){
+        assertThat(new Score(new Line("")).total(), is(4));
+    }
+
 }
