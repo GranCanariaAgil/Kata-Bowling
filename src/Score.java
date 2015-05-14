@@ -10,10 +10,13 @@ public class Score {
         int sum = 0;
         for (int i = 0; i < line.length(); i++) {
             char number = line.charAt(i);
-            if (number != '-') {
-                sum += Integer.parseInt(String.valueOf(number));
-            }
+            if (number == '/') sum += 10 - parseToInt(line.charAt(i - 1)) + parseToInt(line.charAt(i + 1));
+            else if (number != '-') sum += parseToInt(number);
         }
         return sum;
+    }
+
+    private int parseToInt(char number) {
+        return number - 48;
     }
 }

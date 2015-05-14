@@ -25,4 +25,9 @@ public class AcceptedScore {
         assertThat(new Score("61------------------").total(), is(7));
     }
 
+    @Test
+    public void should_consider_next_throw_to_calculate_a_spare() throws Exception {
+        assertThat(new Score("6/4-----------------").total(), is(18));
+    }
+
 }
