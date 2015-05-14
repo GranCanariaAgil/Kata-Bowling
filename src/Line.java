@@ -4,8 +4,10 @@ public class Line {
 
     public Line(String input) {
         frames = new Frame[10];
+        int j = 0;
         for (int i = 0; i < frames.length; i++) {
-            frames[i] = new Frame('-', '-');
+            frames[i] = new Frame(input.charAt(j), input.charAt(j + 1));
+            j += 2;
         }
     }
 
